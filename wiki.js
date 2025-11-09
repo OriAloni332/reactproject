@@ -1,17 +1,16 @@
-const express = require("express");
-const router = express();
-const port = process.env.PORT || 3000;
+// wiki.js - wiki route module
 
+const express = require("express");
+const router = express.Router();
+
+// Homeoage route
 router.get("/", (req, res) => {
   res.send("Wiki home page");
 });
 
+// About page route
 router.get("/about", (req, res) => {
   res.send("About this wiki");
-});
-
-router.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
 });
 
 module.exports = router;
