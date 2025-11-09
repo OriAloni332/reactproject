@@ -1,15 +1,17 @@
 const express = require("express");
-const app = express();
+const router = express();
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-
-  res.send("Hello World!");
-
+router.get("/", (req, res) => {
+  res.send("Wiki home page");
 });
 
-app.listen(port, () => {
+router.get("/about", (req, res) => {
+  res.send("About this wiki");
+});
 
+router.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
-
 });
+
+module.exports = router;
