@@ -12,10 +12,11 @@
     "start": "node --env-file=.env app.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3",
+    "mongos": "^0.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
   }
-
 }
