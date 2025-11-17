@@ -1,60 +1,60 @@
-const Movie = require("../model/movieModel");
+const Post = require("../model/postModel");
 
-const getMovie = async (req, res) => {
+const getPostBySender = async (req, res) => {
   const filter = req.query;
   console.log(filter);
   try {
-    if (filter.releaseYear) {
-      const movies = await Movie.find(filter);
-      res.json(movies);
+    if (filter.senderID) {
+      const posts = await Post.find(filter);
+      res.json(posts);
     } else {
-      const movies = await Movie.find();
-      res.json(movies);
+      const posts = await Post.find();
+      res.json(posts);
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-const getMovieById = async (req, res) => {
+const getPostById = async (req, res) => {
   const id = req.params.id;
   console.log(id);
   try {
-    const movie = await Movie.findById(id);
-    res.json(movie);
+    const post = await Post.findById(id);
+    res.json(post);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-const postMovie = async (req, res) => {
+const postPost = async (req, res) => {
   const obj = req.body;
   console.log(obj);
   try {
-    const response = await Movie.create(obj);
+    const response = await Post.create(obj);
     res.status(201).json(response);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-const deleteMovie = async (req, res) => {
+const deletePost = async (req, res) => {
   const id = req.params.id;
   console.log(id);
   try {
-    const response = await Movie.findByIdAndDelete(id);
+    const response = await Post.findByIdAndDelete(id);
     res.send(response);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-const putMovie = async (req, res) => {
+const putPost = async (req, res) => {
   const id = req.params.id;
   const obj = req.body;
   console.log(id, obj);
   try {
-    const response = await Movie.findByIdAndUpdate(id, obj, { new: true });
+    const response = await Post.findByIdAndUpdate(id, obj, { new: true });
     res.json(response);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -62,9 +62,9 @@ const putMovie = async (req, res) => {
 };
 
 module.exports = {
-  getMovie,
-  getMovieById,
-  postMovie,
-  deleteMovie,
-  putMovie,
+  getPostBySender,
+  getPostById,
+  postPost,
+  deletePost,
+  putPost,
 };

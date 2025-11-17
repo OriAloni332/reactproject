@@ -1,38 +1,46 @@
 ###
-
-GET http://localhost:3000/movie
-
+//GetAllPosts
+GET http://localhost:3000/post
 ###
-
-GET http://localhost:3000/movie?releaseYear=2010
-
-###
-
-GET http://localhost:3000/movie/69133c28251f35bcbc4206a6
-
-
-###
-
-POST http://localhost:3000/movie
+POST http://localhost:3000/post
 Content-Type: application/json
-
 {
-  "title": "Inception",
-  "releaseYear": 2010
+  "title": "Traviling to Japan and dubai", 
+  "senderID": "user123"
 }
-
 ###
 
-DELETE http://localhost:3000/movie/69133c28251f35bcbc4206a6
-
 ###
-
-PUT http://localhost:3000/movie/69133cc67e0a6f1ddc7f1ec7
+POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-  "title": "Star Wars",
-  "releaseYear": 1999
+  "title": "Vacation On the Beach, Miconos", 
+  "senderID": "user456"
+}
+###
+
+###
+//GetPostById
+GET  http://localhost:3000/post/691b2c1ef901c3ee5767d7c2
+###
+
+###
+//GetPostBySender
+GET http://localhost:3000/post?senderID=user456
+###
+
+###
+//GetAllPosts
+GET http://localhost:3000/post
+###
+//UpdatePost
+PUT http://localhost:3000/post/691b2c1ef901c3ee5767d7c2
+Content-Type: application/json
+
+{
+  "title": "Updated Title: Trip to Paris",
+  "senderID": "MamaMia"
 }
 
 
