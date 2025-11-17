@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const movieSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -11,4 +11,4 @@ const movieSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("movie", movieSchema);
+module.exports = mongoose.model("post", postSchema);

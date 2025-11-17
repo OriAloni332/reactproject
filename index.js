@@ -18,8 +18,8 @@ db.once("open", () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const movieRoutes = require("./routes/movieRoutes");
-app.use("/movie", movieRoutes);
+const postRoutes = require("./routes/postRoutes");
+app.use("/post", postRoutes);
 
 const PORT = process.env.PORT;
 
