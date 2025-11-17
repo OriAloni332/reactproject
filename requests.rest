@@ -1,35 +1,46 @@
 ###
-
+//GetAllPosts
 GET http://localhost:3000/post
-
-
+###
+POST http://localhost:3000/post
+Content-Type: application/json
+{
+  "title": "Traviling to Japan and dubai", 
+  "senderID": "user123"
+}
 ###
 
-GET http://localhost:3000/post/69133c28251f35bcbc4206a6
-
-
 ###
-
 POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-  "title": "Inception", 
-  "senderID": "user123"
+  "title": "Vacation On the Beach, Miconos", 
+  "senderID": "user456"
 }
-
 ###
 
-DELETE http://localhost:3000/post/69133c28251f35bcbc4206a6
-
+###
+//GetPostById
+GET  http://localhost:3000/post/691b2c1ef901c3ee5767d7c2
 ###
 
-PUT http://localhost:3000/post/69133cc67e0a6f1ddc7f1ec7
+###
+//GetPostBySender
+GET http://localhost:3000/post?senderID=user456
+###
+
+###
+//GetAllPosts
+GET http://localhost:3000/post
+###
+//UpdatePost
+PUT http://localhost:3000/post/691b2c1ef901c3ee5767d7c2
 Content-Type: application/json
 
 {
-  "title": "Star Wars",
-  "senderID": "user456"
+  "title": "Updated Title: Trip to Paris",
+  "senderID": "MamaMia"
 }
 
 

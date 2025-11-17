@@ -1,14 +1,5 @@
 const Post = require("../model/postModel");
 
-const getAllPosts = async (req, res) => {
-  try {
-    const posts = await Post.find();
-    res.json(posts);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-}
-
 const getPostBySender = async (req, res) => {
   const filter = req.query;
   console.log(filter);
@@ -71,7 +62,6 @@ const putPost = async (req, res) => {
 };
 
 module.exports = {
-  getAllPosts,
   getPostBySender,
   getPostById,
   postPost,
