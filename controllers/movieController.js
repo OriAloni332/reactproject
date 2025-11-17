@@ -1,5 +1,14 @@
 const Movie = require("../model/movieModel");
 
+const getAllMovies = async (req, res) => {
+  try {
+    const movies = await Movie.find();
+    res.json(movies);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
 const getMovie = async (req, res) => {
   const filter = req.query;
   console.log(filter);
@@ -62,6 +71,7 @@ const putMovie = async (req, res) => {
 };
 
 module.exports = {
+  getAllMovies,
   getMovie,
   getMovieById,
   postMovie,
