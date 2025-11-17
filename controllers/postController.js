@@ -9,11 +9,11 @@ const getAllPosts = async (req, res) => {
   }
 }
 
-const getPost = async (req, res) => {
+const getPostBySender = async (req, res) => {
   const filter = req.query;
   console.log(filter);
   try {
-    if (filter.releaseYear) {
+    if (filter.senderID) {
       const posts = await Post.find(filter);
       res.json(posts);
     } else {
@@ -72,7 +72,7 @@ const putPost = async (req, res) => {
 
 module.exports = {
   getAllPosts,
-  getPost,
+  getPostBySender,
   getPostById,
   postPost,
   deletePost,

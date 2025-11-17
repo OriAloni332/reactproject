@@ -2,9 +2,6 @@
 
 GET http://localhost:3000/post
 
-###
-
-GET http://localhost:3000/post?releaseYear=2010
 
 ###
 
@@ -17,8 +14,8 @@ POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-  "title": "Inception",
-  "releaseYear": 2010
+  "title": "Inception", 
+  "senderID": "user123"
 }
 
 ###
@@ -32,7 +29,7 @@ Content-Type: application/json
 
 {
   "title": "Star Wars",
-  "releaseYear": 1999
+  "senderID": "user456"
 }
 
 
