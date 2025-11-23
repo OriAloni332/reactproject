@@ -66,7 +66,11 @@ Content-Type: application/json
   "postId": "69230e9d10e2e37229809b80"
 }
 ###
+//GetCommentById
+GET http://localhost:3000/comment/69230edc10e2e37229809b82
+###
 
+###
 //get comments for a post
 GET http://localhost:3000/comment/post/69230e9d10e2e37229809b80
 ###

@@ -15,6 +15,20 @@ const addCommentToPost = async (req, res) => {
     }
 };
 
+// Read a single comment by its ID
+const getCommentById = async (req, res) => {
+    const commentId = req.params.commentId;
+    try {
+        const commentData = await comment.findById(commentId);
+        if (!commentData) {
+            return res.status(404).json({ message: "Comment not found" });
+        }
+        res.status(200).json(commentData);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 //read comment of post by post id
 const getCommentsByPostId = async (req, res) => {
     const postId = req.params.postId;
@@ -51,6 +65,7 @@ const deleteCommentById = async (req, res) => {
 
 module.exports = {
     addCommentToPost,
+    getCommentById,
     getCommentsByPostId,
     updateCommentById,
     deleteCommentById,
