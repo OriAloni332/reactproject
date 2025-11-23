@@ -42,5 +42,15 @@ Content-Type: application/json
   "title": "Updated Title: Trip to Paris",
   "senderID": "MamaMia"
 }
+###
 
+// create comment for a post
+POST http://localhost:3000/comment/post/691b2c1ef901c3ee5767d7c2
+Content-Type: application/json
+
+{
+  "content": "This looks like an amazing trip!",
+  "author": "commenter789",
+  "postId": "691b2c1ef901c3ee5767d7c2"
+}
 
