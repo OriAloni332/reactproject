@@ -6,11 +6,11 @@ const commentController = require("../controllers/commentController");
 router.post("/post/:postId", commentController.addCommentToPost);
 // Route to get comments of a post by post ID
 router.get("/post/:postId", commentController.getCommentsByPostId);
+// Route to get a single comment by comment ID
+router.get("/:commentId", commentController.getCommentById);
 // Route to update a comment by comment ID
 router.put("/:commentId", commentController.updateCommentById);
 // Route to delete a comment by comment ID
 router.delete("/:commentId", commentController.deleteCommentById);
-// Route to get a single comment by comment ID
-router.get("/:commentId", commentController.getCommentById);
 
 module.exports = router;
