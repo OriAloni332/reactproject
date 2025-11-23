@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 ###
 //GetCommentById
-GET http://localhost:3000/comment/69230edc10e2e37229809b82
+GET http://localhost:3000/comment/692310e710e2e37229809b8c
 ###
 
 ###
@@ -75,7 +75,7 @@ GET http://localhost:3000/comment/69230edc10e2e37229809b82
 GET http://localhost:3000/comment/post/69230e9d10e2e37229809b80
 ###
 //update comment by id
-PUT http://localhost:3000/comment/69230edc10e2e37229809b82
+PUT http://localhost:3000/comment/692310e710e2e37229809b8c
 Content-Type: application/json
 
 {
@@ -84,5 +84,5 @@ Content-Type: application/json
 }
 ###
 //delete comment by id
-DELETE http://localhost:3000/comment/69230edc10e2e37229809b82
+DELETE http://localhost:3000/comment/692310e710e2e37229809b8c
 ###
